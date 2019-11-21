@@ -1,122 +1,233 @@
 SSH Session Transcript
 
 Host: localhost
-Date: Wednesday, November 20, 2019
+Date: Saturday, November 16, 2019
 ---------------------------------
-dblock@localhost:~$ ftinger
--bash: ftinger: command not found
-dblock@localhost:~$ getent
-getent: wrong number of arguments
-Try `getent --help' or `getent --usage' for more information.
-dblock@localhost:~$ getent --help
-Usage: getent [OPTION...] database [key ...]
-Get entries from administrative database.
+dblock@localhost:~$ dpkg --hellp
+dpkg: error: unknown option --hellp
 
--i, --no-idn disable IDN encoding
--s, --service=CONFIG Service configuration to be used
--?, --help Give this help list
---usage Give a short usage message
--V, --version Print program version
+Type dpkg --help for help about installing and deinstalling packages [*];
+Use 'apt' or 'aptitude' for user-friendly package management;
+Type dpkg -Dhelp for a list of dpkg debug flag values;
+Type dpkg --force-help for a list of forcing options;
+Type dpkg-deb --help for help about manipulating *.deb files;
 
-Mandatory or optional arguments to long options are also mandatory or optional
-for any corresponding short options.
+Options marked [*] produce a lot of output - pipe it through 'less' or 'more' !
+dblock@localhost:~$ dpkg --force-help
+dpkg forcing options - control behaviour when problems found:
+warn but continue: --force-,,...
+stop with error: --refuse-,,... | --no-force-,...
+Forcing things:
+[!] all Set all force options
+[*] security-mac Use MAC based security if available
+[*] downgrade Replace a package with a lower version
+configure-any Configure any package which may help this one
+hold Process incidental packages even when on hold
+not-root Try to (de)install things even when not root
+bad-path PATH is missing important programs, problems likely
+bad-verify Install a package even if it fails authenticity check
+bad-version Process even packages with wrong versions
+statoverride-add Overwrite an existing stat override when adding it
+statoverride-remove Ignore a missing stat override when removing it
+overwrite Overwrite a file from one package with another
+overwrite-diverted Overwrite a diverted file with an undiverted version
+[!] overwrite-dir Overwrite one package's directory with another's file
+[!] unsafe-io Do not perform safe I/O operations when unpacking
+[!] script-chrootless Do not chroot into maintainer script environment
+[!] confnew Always use the new config files, don't prompt
+[!] confold Always use the old config files, don't prompt
+[!] confdef Use the default option for new config files if one
+is available, don't prompt. If no default can be found,
+you will be prompted unless one of the confold or
+confnew options is also given
+[!] confmiss Always install missing config files
+[!] confask Offer to replace config files with no new versions
+[!] architecture Process even packages with wrong or no architecture
+[!] breaks Install even if it would break another package
+[!] conflicts Allow installation of conflicting packages
+[!] depends Turn all dependency problems into warnings
+[!] depends-version Turn dependency version problems into warnings
+[!] remove-reinstreq Remove packages which require installation
+[!] remove-essential Remove an essential package
 
-Supported databases:
-ahosts ahostsv4 ahostsv6 aliases ethers group gshadow hosts initgroups
-netgroup networks passwd protocols rpc services shadow
+WARNING - use of options marked [!] can seriously damage your installation.
+Forcing options marked [*] are enabled by default.
 
-For bug reporting instructions, please see:
-.
-dblock@localhost:~$ getent --service=CONFIG
-getent: wrong number of arguments
-Try `getent --help' or `getent --usage' for more information.
-dblock@localhost:~$ getent --usage
-Usage: getent [-i?V] [-s CONFIG] [--no-idn] [--service=CONFIG] [--help]
-[--usage] [--version] database [key ...]
-dblock@localhost:~$ getent -s
-getent: option requires an argument -- 's'
-Try `getent --help' or `getent --usage' for more information.
-dblock@localhost:~$ arguments
--bash: arguments: command not found
-dblock@localhost:~$ getent passwd
-root:x:0:0:root:/root:/bin/bash
-daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
-bin:x:2:2:bin:/bin:/usr/sbin/nologin
-sys:x:3:3:sys:/dev:/usr/sbin/nologin
-sync:x:4:65534:sync:/bin:/bin/sync
-games:x:5:60:games:/usr/games:/usr/sbin/nologin
-man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
-lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
-mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
-news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
-uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
-proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
-www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
-backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
-list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
-irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
-gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
-nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
-_apt:x:100:65534::/nonexistent:/usr/sbin/nologin
-dblock:x:2000:2000::/home/dblock:/bin/bash
-systemd-timesync:x:101:103:systemd Time Synchronization,,,:/run/systemd:/usr/sbin/nologin
-systemd-network:x:102:104:systemd Network Management,,,:/run/systemd:/usr/sbin/nologin
-systemd-resolve:x:103:105:systemd Resolver,,,:/run/systemd:/usr/sbin/nologin
-messagebus:x:104:106::/nonexistent:/usr/sbin/nologin
-usbmux:x:105:46:usbmux daemon,,,:/var/lib/usbmux:/usr/sbin/nologin
-rtkit:x:106:110:RealtimeKit,,,:/proc:/usr/sbin/nologin
-dnsmasq:x:107:65534:dnsmasq,,,:/var/lib/misc:/usr/sbin/nologin
-pulse:x:108:112:PulseAudio daemon,,,:/var/run/pulse:/usr/sbin/nologin
-avahi:x:109:114:Avahi mDNS daemon,,,:/var/run/avahi-daemon:/usr/sbin/nologin
-geoclue:x:110:115::/var/lib/geoclue:/usr/sbin/nologin
-lightdm:x:111:116:Light Display Manager:/var/lib/lightdm:/bin/false
-dblock@localhost:~$ finger [user]
--bash: finger: command not found
-dblock@localhost:~$ man ascii
-No manual entry for ascii
-dblock@localhost:~$ mount | column -t
-/dev/root on / type ext4 (ro,relatime,seclabel,block_validity,delalloc,barrier,user_xattr)
-tmpfs on /dev type tmpfs (rw,nosuid,relatime,seclabel,size=1429140k,nr_inodes=357285,mode=755)
-devpts on /dev/pts type devpts (rw,relatime,seclabel,mode=600,ptmxmode=000)
-none on /dev/stune type cgroup (rw,nosuid,nodev,noexec,relatime,schedtune)
-none on /dev/cpuctl type cgroup (rw,nosuid,nodev,noexec,relatime,cpu)
-none on /dev/cpuset type cgroup (rw,nosuid,nodev,noexec,relatime,cpuset,noprefix,release_agent=/sbin/cpuset_release_agent)
-cg2_bpf on /dev/cg2_bpf type cgroup2 (rw,nosuid,nodev,noexec,relatime)
-adb on /dev/usb-ffs/adb type functionfs (rw,relatime)
-proc on /proc type proc (rw,relatime,gid=3009,hidepid=2)
-sysfs on /sys type sysfs (rw,relatime,seclabel)
-selinuxfs on /sys/fs/selinux type selinuxfs (rw,relatime)
-debugfs on /sys/kernel/debug type debugfs (rw,relatime,seclabel)
-tracefs on /sys/kernel/debug/tracing type tracefs (rw,relatime,seclabel)
-bpf on /sys/fs/bpf type bpf (rw,nosuid,nodev,noexec,relatime)
-pstore on /sys/fs/pstore type pstore (rw,nosuid,nodev,noexec,relatime,seclabel)
-tmpfs on /mnt type tmpfs (rw,nosuid,nodev,noexec,relatime,seclabel,size=1429140k,nr_inodes=357285,mode=755,gid=1000)
-/dev/block/bootdevice/by-name/persist on /mnt/vendor/persist type ext4 (rw,nosuid,nodev,noatime,seclabel,noauto_da_alloc,data=ordered)
-/dev/block/bootdevice/by-name/drm on /mnt/vendor/persist-lg type ext4 (rw,nosuid,nodev,noatime,seclabel,noauto_da_alloc,data=ordered)
-/dev/block/bootdevice/by-name/sns on /mnt/vendor/sns type ext4 (rw,nosuid,nodev,noatime,seclabel,noauto_da_alloc,data=ordered)
-/dev/block/bootdevice/by-name/power on /mnt/vendor/power type ext4 (rw,nosuid,nodev,noatime,seclabel,noauto_da_alloc,data=ordered)
-/dev/block/bootdevice/by-name/fota on /mnt/product/fota type ext4 (rw,nosuid,nodev,noatime,seclabel,noauto_da_alloc,data=ordered)
-/dev/block/bootdevice/by-name/p_persist_lg on /mnt/product/persist-lg type ext4 (rw,nosuid,nodev,noatime,seclabel,noauto_da_alloc,data=ordered)
-/dev/block/bootdevice/by-name/mpt on /mnt/product/mpt type ext4 (rw,nosuid,nodev,noatime,seclabel,noauto_da_alloc,data=ordered)
-/dev/block/bootdevice/by-name/srtc on /mnt/product/srtc type ext4 (rw,nosuid,nodev,noatime,seclabel,noauto_da_alloc,data=ordered)
-/dev/block/bootdevice/by-name/els on /mnt/product/els type ext4 (rw,nosuid,nodev,noatime,seclabel,noauto_da_alloc,data=ordered)
-/dev/block/bootdevice/by-name/carrier on /mnt/product/carrier type ext4 (rw,nosuid,nodev,noatime,seclabel,noauto_da_alloc,data=ordered)
-/dev/block/bootdevice/by-name/operatorlogging on /mnt/product/quality type ext4 (rw,nosuid,nodev,noatime,seclabel,noauto_da_alloc,data=ordered)
-/dev/block/bootdevice/by-name/eri on /mnt/product/eri type ext4 (rw,nosuid,nodev,noatime,seclabel,noauto_da_alloc,data=ordered)
-/data/media on /mnt/runtime/default/emulated type sdcardfs (rw,nosuid,nodev,noexec,noatime,fsuid=1023,fsgid=1023,gid=1015,multiuser,mask=6,derive_gid,default_normal)
-/data/media on /mnt/runtime/read/emulated type sdcardfs (rw,nosuid,nodev,noexec,noatime,fsuid=1023,fsgid=1023,gid=9997,multiuser,mask=23,derive_gid,default_normal)
-/data/media on /mnt/runtime/write/emulated type sdcardfs (rw,nosuid,nodev,noexec,noatime,fsuid=1023,fsgid=1023,gid=9997,multiuser,mask=7,derive_gid,default_normal)
-/dev/block/dm-1 on /product type ext4 (ro,relatime,seclabel,block_validity,discard,delalloc,barrier,user_xattr)
-/dev/block/dm-3 on /product/OP type ext4 (ro,nosuid,nodev,noatime,context=u:object_r:system_file:s0,noauto_da_alloc,data=ordered)
-/dev/block/dm-2 on /vendor type ext4 (ro,relatime,seclabel,block_validity,discard,delalloc,barrier,user_xattr)
-/dev/block/bootdevice/by-name/dsp_b on /vendor/dsp type ext4 (ro,nosuid,nodev,relatime,seclabel,data=ordered)
-/dev/block/bootdevice/by-name/modem_b on /vendor/firmware_mnt type vfat (ro,relatime,context=u:object_r:firmware_file:s0,gid=1000,fmask=0337,dmask=0227,codepage=437,iocharset=iso8859-1,shortname=lower,errors=remount-ro)
-none on /acct type cgroup (rw,nosuid,nodev,noexec,relatime,cpuacct)
-none on /config type configfs (rw,nosuid,nodev,noexec,relatime)
-/dev/block/bootdevice/by-name/userdata on /data type ext4 (rw,nosuid,nodev,noatime,seclabel,discard,noauto_da_alloc,resgid=1065,data=ordered)
-tmpfs on /storage type tmpfs (rw,nosuid,nodev,noexec,relatime,seclabel,size=1429140k,nr_inodes=357285,mode=755,gid=1000)
-/data/media on /storage/emulated type sdcardfs (rw,nosuid,nodev,noexec,noatime,fsuid=1023,fsgid=1023,gid=9997,multiuser,mask=7,derive_gid,default_normal)
-tmpfs on /storage/self type tmpfs (rw,nosuid,nodev,noexec,relatime,seclabel,size=1429140k,nr_inodes=357285,mode=755,gid=1000)
+Currently enabled options:
+security-mac,downgrade
+dblock@localhost:~$ dpkg *security-mac
+dpkg: error: need an action option
+
+Type dpkg --help for help about installing and deinstalling packages [*];
+Use 'apt' or 'aptitude' for user-friendly package management;
+Type dpkg -Dhelp for a list of dpkg debug flag values;
+Type dpkg --force-help for a list of forcing options;
+Type dpkg-deb --help for help about manipulating *.deb files;
+
+Options marked [*] produce a lot of output - pipe it through 'less' or 'more' !
+dblock@localhost:~$ all
+-bash: all: command not found
+dblock@localhost:~$ dpkgg --all
+-bash: dpkgg: command not found
+dblock@localhost:~$ dpkg --all
+dpkg: error: unknown option --all
+
+Type dpkg --help for help about installing and deinstalling packages [*];
+Use 'apt' or 'aptitude' for user-friendly package management;
+Type dpkg -Dhelp for a list of dpkg debug flag values;
+Type dpkg --force-help for a list of forcing options;
+Type dpkg-deb --help for help about manipulating *.deb files;
+
+Options marked [*] produce a lot of output - pipe it through 'less' or 'more' !
+dblock@localhost:~$ directory
+-bash: directory: command not found
+dblock@localhost:~$ list
+-bash: list: command not found
+dblock@localhost:~$ ls list
+ls: cannot access 'list': No such file or directory
+dblock@localhost:~$ android --commands
+-bash: android: command not found
+dblock@localhost:~$ bash --commands
+bash: --commands: invalid option
+Usage: bash [GNU long option] [option] ...
+bash [GNU long option] [option] script-file ...
+GNU long options:
+--debug
+--debugger
+--dump-po-strings
+--dump-strings
+--help
+--init-file
+--login
+--noediting
+--noprofile
+--norc
+--posix
+--pretty-print
+--rcfile
+--restricted
+--verbose
+--version
+Shell options:
+-ilrsD or -c command or -O shopt_option (invocation only)
+-abefhkmnptuvxBCHP or -o option
+dblock@localhost:~$ bash --debug ilrsd
+bash: ilrsd: No such file or directory
+dblock@localhost:~$ apt --help
+apt 1.8.4 (arm64)
+Usage: apt [options] command
+
+apt is a commandline package manager and provides commands for
+searching and managing as well as querying information about packages.
+It provides the same functionality as the specialized APT tools,
+like apt-get and apt-cache, but enables options more suitable for
+interactive use by default.
+
+Most used commands:
+list - list packages based on package names
+search - search in package descriptions
+show - show package details
+install - install packages
+reinstall - reinstall packages
+remove - remove packages
+autoremove - Remove automatically all unused packages
+update - update list of available packages
+upgrade - upgrade the system by installing/upgrading packages
+full-upgrade - upgrade the system by removing/installing/upgrading packages
+edit-sources - edit the source information file
+
+See apt(8) for more information about the available commands.
+Configuration options and syntax is detailed in apt.conf(5).
+Information about how to configure sources can be found in sources.list(5).
+Package and version choices can be expressed via apt_preferences(5).
+Security details are available in apt-secure(8).
+This APT has Super Cow Powers.
+dblock@localhost:~$ apt --list
+E: Command line option --list is not understood in combination with the other options
+dblock@localhost:~$ apt-get-syslog
+-bash: apt-get-syslog: command not found
+dblock@localhost:~$ apt-get-list
+-bash: apt-get-list: command not found
+dblock@localhost:~$ apt-get --list
+E: Command line option --list is not understood in combination with the other options
+dblock@localhost:~$ list
+-bash: list: command not found
+dblock@localhost:~$ apt --show
+E: Command line option --show is not understood in combination with the other options
+dblock@localhost:~$ apt.conf
+-bash: apt.conf: command not found
+dblock@localhost:~$ sources
+-bash: sources: command not found
+dblock@localhost:~$ src
+-bash: src: command not found
+dblock@localhost:~$ apt --src
+E: Command line option --src is not understood in combination with the other options
+dblock@localhost:~$ ls src
+ls: cannot access 'src': No such file or directory
+dblock@localhost:~$ user
+-bash: user: command not found
+dblock@localhost:~$ who --user
+dblock pts/1 Nov 16 12:16 . 32344 (127.0.0.1)
+dblock pts/0 Nov 16 11:42 00:16 31031 (127.0.0.1)
+dblock@localhost:~$ what --device
+-bash: what: command not found
+dblock@localhost:~$ whho --device
+-bash: whho: command not found
+dblock@localhost:~$ who --device
+who: unrecognized option '--device'
+Try 'who --help' for more information.
+dblock@localhost:~$ who --help
+Usage: who [OPTION]... [ FILE | ARG1 ARG2 ]
+Print information about users who are currently logged in.
+
+-a, --all same as -b -d --login -p -r -t -T -u
+-b, --boot time of last system boot
+-d, --dead print dead processes
+-H, --heading print line of column headings
+--ips print ips instead of hostnames. with --lookup,
+canonicalizes based on stored IP, if available,
+rather than stored hostname
+-l, --login print system login processes
+--lookup attempt to canonicalize hostnames via DNS
+-m only hostname and user associated with stdin
+-p, --process print active processes spawned by init
+-q, --count all login names and number of users logged on
+-r, --runlevel print current runlevel
+-s, --short print only name, line, and time (default)
+-t, --time print last system clock change
+-T, -w, --mesg add user's message status as +, - or ?
+-u, --users list users logged in
+--message same as -T
+--writable same as -T
+--help display this help and exit
+--version output version information and exit
+
+If FILE is not specified, use /var/run/utmp. /var/log/wtmp as FILE is common.
+If ARG1 ARG2 given, -m presumed: 'am i' or 'mom likes' are usual.
+
+GNU coreutils online help: 
+Report who translation bugs to 
+Full documentation at: 
+or available locally via: info '(coreutils) who invocation'
+dblock@localhost:~$ who --heading
+NAME LINE TIME COMMENT
+dblock pts/1 Nov 16 12:16 (127.0.0.1)
+dblock pts/0 Nov 16 11:42 (127.0.0.1)
+dblock@localhost:~$ /var/run/utmp 'mom likes'
+-bash: /var/run/utmp: Permission denied
+dblock@localhost:~$ who --mesg
+dblock - pts/1 Nov 16 12:16 (127.0.0.1)
+dblock - pts/0 Nov 16 11:42 (127.0.0.1)
+dblock@localhost:~$ who --users
+dblock pts/1 Nov 16 12:16 . 32344 (127.0.0.1)
+dblock pts/0 Nov 16 11:42 00:20 31031 (127.0.0.1)
+dblock@localhost:~$ who --process
+dblock@localhost:~$
+dblock@localhost:~$ who --runlevel
+dblock@localhost:~$ who x
+dblock@localhost:~$ who --short
+dblock pts/1 Nov 16 12:16 (127.0.0.1)
+dblock pts/0 Nov 16 11:42 (127.0.0.1)
 dblock@localhost:~$
 ---------------------------------
 
