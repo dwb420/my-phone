@@ -1,0 +1,872 @@
+dblock@localhost:~$ bash --login
+dblock@localhost:~$ ddrescue --help
+bash: ddrescue: command not found
+dblock@localhost:~$ apt-get install ddrescue command
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+E: Unable to locate package command
+dblock@localhost:~$ ~/.bashrc
+bash: /home/dblock/.bashrc: Permission denied
+dblock@localhost:~$ ls-l
+bash: ls-l: command not found
+dblock@localhost:~$ ls -l
+total 16
+-rw-------. 1 dblock dblock  654 Nov 21 15:14  list
+drwx------. 2 dblock dblock 4096 Nov 20 14:46  monitor
+-rw-------. 1 dblock dblock    0 Nov  9 09:47  popd
+-rw-------. 1 dblock dblock    0 Nov  9 09:31  source
+-rw-------. 1 dblock dblock 3216 Nov 21 00:08  typescript
+-rw-------. 1 dblock dblock    0 Nov  9 09:50  umask
+-rw-------. 1 dblock dblock    0 Nov 16 21:54  xml
+-rw-------. 1 dblock dblock 3206 Nov 20 20:36 'ystemd --user'
+dblock@localhost:~$ chmod 777 -R /path/to/Dir
+chmod: cannot access '/path/to/Dir': No such file or directory
+dblock@localhost:~$ chmod 777 -R  /usr/bin/~
+chmod: cannot access '/usr/bin/~': No such file or directory
+dblock@localhost:~$ whoami
+dblock
+dblock@localhost:~$ chmod 777 -R /usr/bin/dblock
+chmod: cannot access '/usr/bin/dblock': No such file or directory
+dblock@localhost:~$ source --help
+source: source filename [arguments]
+    Execute commands from a file in the current shell.
+
+    Read and execute commands from FILENAME in the current shell.  The
+    entries in $PATH are used to find the directory containing FILENAME.
+    If any ARGUMENTS are supplied, they become the positional parameters
+    when FILENAME is executed.
+
+    Exit Status:
+    Returns the status of the last command executed in FILENAME; fails if
+    FILENAME cannot be read.
+dblock@localhost:~$ who 2
+dblock@localhost:~$ uname 2
+uname: extra operand '2'
+Try 'uname --help' for more information.
+dblock@localhost:~$ 2 --help
+bash: 2: command not found
+dblock@localhost:~$ /usr/bin/2 --help
+bash: /usr/bin/2: No such file or directory
+dblock@localhost:~$ .bashrc --rcfile /home/dblock
+bash: .bashrc: command not found
+dblock@localhost:~$ bash --rcfile /home/dblock
+bash: /home/dblock: is a directory
+dblock@localhost:~$ source ~/.bash-aliases
+bash: /home/dblock/.bash-aliases: No such file or directory
+dblock@localhost:~$ source ~/bash-aliases
+bash: /home/dblock/bash-aliases: No such file or directory
+dblock@localhost:~$ aliases
+bash: aliases: command not found
+dblock@localhost:~$ apt
+apt 1.8.4 (arm64)
+Usage: apt [options] command
+
+apt is a commandline package manager and provides commands for
+searching and managing as well as querying information about packages.
+It provides the same functionality as the specialized APT tools,
+like apt-get and apt-cache, but enables options more suitable for
+interactive use by default.
+
+Most used commands:
+  list - list packages based on package names
+  search - search in package descriptions
+  show - show package details
+  install - install packages
+  reinstall - reinstall packages
+  remove - remove packages
+  autoremove - Remove automatically all unused packages
+  update - update list of available packages
+  upgrade - upgrade the system by installing/upgrading packages
+  full-upgrade - upgrade the system by removing/installing/upgrading packages
+  edit-sources - edit the source information file
+
+See apt(8) for more information about the available commands.
+Configuration options and syntax is detailed in apt.conf(5).
+Information about how to configure sources can be found in sources.list(5).
+Package and version choices can be expressed via apt_preferences(5).
+Security details are available in apt-secure(8).
+                                        This APT has Super Cow Powers.
+dblock@localhost:~$ apt-remove Tracefile
+bash: apt-remove: command not found
+dblock@localhost:~$ apt --remove Tracefile
+E: Invalid operation Tracefile
+dblock@localhost:~$ apt Tracefile --remove
+E: Invalid operation Tracefile
+dblock@localhost:~$ apt autoremove
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+0 upgraded, 0 newly installed, 0 to remove and 12 not upgraded.
+6 not fully installed or removed.
+After this operation, 0 B of additional disk space will be used.
+E: Setting in Start via TCSAFLUSH for stdin failed! - tcsetattr (13: Permission denied)
+dpkg: error: requested operation requires superuser privilege
+E: Sub-process /usr/bin/dpkg returned an error code (2)
+dblock@localhost:~$ sudo apt autoremove
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+0 upgraded, 0 newly installed, 0 to remove and 12 not upgraded.
+6 not fully installed or removed.
+After this operation, 0 B of additional disk space will be used.
+E: Setting in Start via TCSAFLUSH for stdin failed! - tcsetattr (13: Permission denied)
+Setting up udisks2 (2.8.4-1) ...
+Failed to scan devices: Permission denied
+dpkg: error processing package udisks2 (--configure):
+ installed udisks2 package post-installation script subprocess returned error exit status 1
+dpkg: dependency problems prevent configuration of gvfs-daemons:
+ gvfs-daemons depends on udisks2; however:
+  Package udisks2 is not configured yet.
+
+dpkg: error processing package gvfs-daemons (--configure):
+ dependency problems - leaving unconfigured
+dpkg: dependency problems prevent configuration of gvfs-backends:
+ gvfs-backends depends on gvfs-daemons (= 1.42.1-3); however:
+  Package gvfs-daemons is not configured yet.
+
+dpkg: error processing package gvfs-backends (--configure):
+ dependency problems - leaving unconfigured
+dpkg: dependency problems prevent configuration of gnome-disk-utility:
+ gnome-disk-utility depends on udisks2 (>= 2.7.6); however:
+  Package udisks2 is not configured yet.
+
+dpkg: error processing package gnome-disk-utility (--configure):
+ dependency problems - leaving unconfigured
+dpkg: dependency problems prevent configuration of gvfs:arm64:
+ gvfs:arm64 depends on gvfs-daemons (<< 1.42.1-3.1~); however:
+  Package gvfs-daemons is not configured yet.
+ gvfs:arm64 depends on gvfs-daemons (>= 1.42.1-3); however:
+  Package gvfs-daemons is not configured yet.
+
+dpkg: error processing package gvfs:arm64 (--configure):
+ dependency problems - leaving unconfigured
+dpkg: dependency problems prevent configuration of gvfs-fuse:
+ gvfs-fuse depends on gvfs (= 1.42.1-3); however:
+  Package gvfs:arm64 is not configured yet.
+
+dpkg: error processing package gvfs-fuse (--configure):
+ dependency problems - leaving unconfigured
+Errors were encountered while processing:
+ udisks2
+ gvfs-daemons
+ gvfs-backends
+ gnome-disk-utility
+ gvfs:arm64
+ gvfs-fuse
+E: Sub-process /usr/bin/dpkg returned an error code (1)
+dblock@localhost:~$ dpkg --configure gnome-disk-utility
+dpkg: error: requested operation requires superuser privilege
+dblock@localhost:~$ su
+root@localhost:/home/dblock# sudo dpkg --configure gnome-disk-utility
+dpkg: dependency problems prevent configuration of gnome-disk-utility:
+ gnome-disk-utility depends on udisks2 (>= 2.7.6); however:
+  Package udisks2 is not configured yet.
+
+dpkg: error processing package gnome-disk-utility (--configure):
+ dependency problems - leaving unconfigured
+Errors were encountered while processing:
+ gnome-disk-utility
+root@localhost:/home/dblock# help gnome help
+help: help [-dms] [pattern ...]
+    Display information about builtin commands.
+
+    Displays brief summaries of builtin commands.  If PATTERN is
+    specified, gives detailed help on all commands matching PATTERN,
+    otherwise the list of help topics is printed.
+
+    Options:
+      -d        output short description for each topic
+      -m        display usage in pseudo-manpage format
+      -s        output only a short usage synopsis for each topic matching
+                PATTERN
+
+    Arguments:
+      PATTERN   Pattern specifying a help topic
+
+    Exit Status:
+    Returns success unless PATTERN is not found or an invalid option is given.
+root@localhost:/home/dblock# help -d
+GNU bash, version 5.0.3(1)-release (aarch64-unknown-linux-gnu)
+These shell commands are defined internally.  Type `help' to see this list.
+Type `help name' to find out more about the function `name'.
+Use `info bash' to find out more about the shell in general.
+Use `man -k' or `info' to find out more about commands not in this list.
+
+A star (*) next to a name means that the command is disabled.
+
+ job_spec [&]                             history [-c] [-d offset] [n] or histo>
+ (( expression ))                         if COMMANDS; then COMMANDS; [ elif CO>
+ . filename [arguments]                   jobs [-lnprs] [jobspec ...] or jobs ->
+ :                                        kill [-s sigspec | -n signum | -sigsp>
+ [ arg... ]                               let arg [arg ...]
+ [[ expression ]]                         local [option] name[=value] ...
+ alias [-p] [name[=value] ... ]           logout [n]
+ bg [job_spec ...]                        mapfile [-d delim] [-n count] [-O ori>
+ bind [-lpsvPSVX] [-m keymap] [-f filen>  popd [-n] [+N | -N]
+ break [n]                                printf [-v var] format [arguments]
+ builtin [shell-builtin [arg ...]]        pushd [-n] [+N | -N | dir]
+ caller [expr]                            pwd [-LP]
+ case WORD in [PATTERN [| PATTERN]...) >  read [-ers] [-a array] [-d delim] [-i>
+ cd [-L|[-P [-e]] [-@]] [dir]             readarray [-d delim] [-n count] [-O o>
+ command [-pVv] command [arg ...]         readonly [-aAf] [name[=value] ...] or>
+ compgen [-abcdefgjksuv] [-o option] [->  return [n]
+ complete [-abcdefgjksuv] [-pr] [-DEI] >  select NAME [in WORDS ... ;] do COMMA>
+ compopt [-o|+o option] [-DEI] [name ..>  set [-abefhkmnptuvxBCHP] [-o option-n>
+ continue [n]                             shift [n]
+ coproc [NAME] command [redirections]     shopt [-pqsu] [-o] [optname ...]
+ declare [-aAfFgilnrtux] [-p] [name[=va>  source filename [arguments]
+ dirs [-clpv] [+N] [-N]                   suspend [-f]
+ disown [-h] [-ar] [jobspec ... | pid .>  test [expr]
+ echo [-neE] [arg ...]                    time [-p] pipeline
+ enable [-a] [-dnps] [-f filename] [nam>  times
+ eval [arg ...]                           trap [-lp] [[arg] signal_spec ...]
+ exec [-cl] [-a name] [command [argumen>  true
+ exit [n]                                 type [-afptP] name [name ...]
+ export [-fn] [name[=value] ...] or exp>  typeset [-aAfFgilnrtux] [-p] name[=va>
+ false                                    ulimit [-SHabcdefiklmnpqrstuvxPT] [li>
+ fc [-e ename] [-lnr] [first] [last] or>  umask [-p] [-S] [mode]
+ fg [job_spec]                            unalias [-a] name [name ...]
+ for NAME [in WORDS ... ] ; do COMMANDS>  unset [-f] [-v] [-n] [name ...]
+ for (( exp1; exp2; exp3 )); do COMMAND>  until COMMANDS; do COMMANDS; done
+ function name { COMMANDS ; } or name (>  variables - Names and meanings of som>
+ getopts optstring name [arg]             wait [-fn] [id ...]
+ hash [-lr] [-p pathname] [-dt] [name .>  while COMMANDS; do COMMANDS; done
+ help [-dms] [pattern ...]                { COMMANDS ; }
+root@localhost:/home/dblock# help -m
+GNU bash, version 5.0.3(1)-release (aarch64-unknown-linux-gnu)
+These shell commands are defined internally.  Type `help' to see this list.
+Type `help name' to find out more about the function `name'.
+Use `info bash' to find out more about the shell in general.
+Use `man -k' or `info' to find out more about commands not in this list.
+
+A star (*) next to a name means that the command is disabled.
+
+ job_spec [&]                             history [-c] [-d offset] [n] or histo>
+ (( expression ))                         if COMMANDS; then COMMANDS; [ elif CO>
+ . filename [arguments]                   jobs [-lnprs] [jobspec ...] or jobs ->
+ :                                        kill [-s sigspec | -n signum | -sigsp>
+ [ arg... ]                               let arg [arg ...]
+ [[ expression ]]                         local [option] name[=value] ...
+ alias [-p] [name[=value] ... ]           logout [n]
+ bg [job_spec ...]                        mapfile [-d delim] [-n count] [-O ori>
+ bind [-lpsvPSVX] [-m keymap] [-f filen>  popd [-n] [+N | -N]
+ break [n]                                printf [-v var] format [arguments]
+ builtin [shell-builtin [arg ...]]        pushd [-n] [+N | -N | dir]
+ caller [expr]                            pwd [-LP]
+ case WORD in [PATTERN [| PATTERN]...) >  read [-ers] [-a array] [-d delim] [-i>
+ cd [-L|[-P [-e]] [-@]] [dir]             readarray [-d delim] [-n count] [-O o>
+ command [-pVv] command [arg ...]         readonly [-aAf] [name[=value] ...] or>
+ compgen [-abcdefgjksuv] [-o option] [->  return [n]
+ complete [-abcdefgjksuv] [-pr] [-DEI] >  select NAME [in WORDS ... ;] do COMMA>
+ compopt [-o|+o option] [-DEI] [name ..>  set [-abefhkmnptuvxBCHP] [-o option-n>
+ continue [n]                             shift [n]
+ coproc [NAME] command [redirections]     shopt [-pqsu] [-o] [optname ...]
+ declare [-aAfFgilnrtux] [-p] [name[=va>  source filename [arguments]
+ dirs [-clpv] [+N] [-N]                   suspend [-f]
+ disown [-h] [-ar] [jobspec ... | pid .>  test [expr]
+ echo [-neE] [arg ...]                    time [-p] pipeline
+ enable [-a] [-dnps] [-f filename] [nam>  times
+ eval [arg ...]                           trap [-lp] [[arg] signal_spec ...]
+ exec [-cl] [-a name] [command [argumen>  true
+ exit [n]                                 type [-afptP] name [name ...]
+ export [-fn] [name[=value] ...] or exp>  typeset [-aAfFgilnrtux] [-p] name[=va>
+ false                                    ulimit [-SHabcdefiklmnpqrstuvxPT] [li>
+ fc [-e ename] [-lnr] [first] [last] or>  umask [-p] [-S] [mode]
+ fg [job_spec]                            unalias [-a] name [name ...]
+ for NAME [in WORDS ... ] ; do COMMANDS>  unset [-f] [-v] [-n] [name ...]
+ for (( exp1; exp2; exp3 )); do COMMAND>  until COMMANDS; do COMMANDS; done
+ function name { COMMANDS ; } or name (>  variables - Names and meanings of som>
+ getopts optstring name [arg]             wait [-fn] [id ...]
+ hash [-lr] [-p pathname] [-dt] [name .>  while COMMANDS; do COMMANDS; done
+ help [-dms] [pattern ...]                { COMMANDS ; }
+root@localhost:/home/dblock# break --help
+break: break [n]
+    Exit for, while, or until loops.
+
+    Exit a FOR, WHILE or UNTIL loop.  If N is specified, break N enclosing
+    loops.
+
+    Exit Status:
+    The exit status is 0 unless N is not greater than or equal to 1.
+root@localhost:/home/dblock# -d
+bash: -d: command not found
+root@localhost:/home/dblock# coproc --help
+[1] 16940
+root@localhost:/home/dblock# bash: line 7: --help: command not found
+root@localhost:/home/dblock# #!/bin/bash
+[1]+  Exit 127                coproc COPROC --help
+root@localhost:/home/dblock# echo hello
+hello
+root@localhost:/home/dblock# #!/bin/bash
+root@localhost:/home/dblock#
+root@localhost:/home/dblock# echo hello
+hello
+root@localhost:/home/dblock#
+root@localhost:/home/dblock# if test -t 1; then
+>     # Stdout is a terminal.
+>     exec >log
+> else
+>     # Stdout is not a terminal.
+>     npipe=/tmp/$$.tmp
+>     trap "rm -f $npipe" EXIT
+>     mknod $npipe p
+>     tee <$npipe log &
+>     exec 1>&-
+>     exec 1>$npipe
+> fi
+root@localhost:/home/dblock#
+root@localhost:/home/dblock# echo goodbye
+root@localhost:/home/dblock# echo hello
+root@localhost:/home/dblock#
+root@localhost:/home/dblock# if test -t 1; then
+>     # Stdout is a terminal.
+>     exec >log
+> else
+>     # Stdout is not a terminal.
+>     exec 7>&1
+>     coproc tee log 1>&7
+>     #echo Stdout of coproc: ${COPROC[0]} >&2
+>     #echo Stdin of coproc: ${COPROC[1]} >&2
+>     #ls -la /proc/$$/fd
+>     exec 7>&-
+>     exec 7>&${COPROC[1]}-
+>     exec 1>&7-
+>     eval "exec ${COPROC[0]}>&-"
+>     #ls -la /proc/$$/fd
+> fi
+[1] 17831
+root@localhost:/home/dblock# echo goodbye
+root@localhost:/home/dblock# echo error >&2
+error
+root@localhost:/home/dblock# cat /proc/terminfo
+cat: /proc/terminfo: No such file or directory
+root@localhost:/home/dblock# cat /usr/sbin
+cat: /usr/sbin: Is a directory
+root@localhost:/home/dblock# who /usr/sbin
+root@localhost:/home/dblock# who /usr/sbin return
+root@localhost:/home/dblock# ddrecue
+bash: ddrecue: command not found
+root@localhost:/home/dblock# adb
+bash: adb: command not found
+root@localhost:/home/dblock# fuser -a
+No process specification given
+Usage: fuser [-fIMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE]
+             [-k [-i] [-SIGNAL]] NAME...
+       fuser -l
+       fuser -V
+Show which processes use the named files, sockets, or filesystems.
+
+  -a,--all              display unused files too
+  -i,--interactive      ask before killing (ignored without -k)
+  -I,--inode            use always inodes to compare files
+  -k,--kill             kill processes accessing the named file
+  -l,--list-signals     list available signal names
+  -m,--mount            show all processes using the named filesystems or
+                        block device
+  -M,--ismountpoint     fulfill request only if NAME is a mount point
+  -n,--namespace SPACE  search in this name space (file, udp, or tcp)
+  -s,--silent           silent operation
+  -SIGNAL               send this signal instead of SIGKILL
+  -u,--user             display user IDs
+  -v,--verbose          verbose output
+  -w,--writeonly        kill only processes with write access
+  -V,--version          display version information
+  -4,--ipv4             search IPv4 sockets only
+  -6,--ipv6             search IPv6 sockets only
+  -                     reset options
+
+  udp/tcp names: [local_port][,[rmt_host][,[rmt_port]]]
+
+root@localhost:/home/dblock# fuser -l --all
+root@localhost:/home/dblock# fuser -M
+No process specification given
+Usage: fuser [-fIMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE]
+             [-k [-i] [-SIGNAL]] NAME...
+       fuser -l
+       fuser -V
+Show which processes use the named files, sockets, or filesystems.
+
+  -a,--all              display unused files too
+  -i,--interactive      ask before killing (ignored without -k)
+  -I,--inode            use always inodes to compare files
+  -k,--kill             kill processes accessing the named file
+  -l,--list-signals     list available signal names
+  -m,--mount            show all processes using the named filesystems or
+                        block device
+  -M,--ismountpoint     fulfill request only if NAME is a mount point
+  -n,--namespace SPACE  search in this name space (file, udp, or tcp)
+  -s,--silent           silent operation
+  -SIGNAL               send this signal instead of SIGKILL
+  -u,--user             display user IDs
+  -v,--verbose          verbose output
+  -w,--writeonly        kill only processes with write access
+  -V,--version          display version information
+  -4,--ipv4             search IPv4 sockets only
+  -6,--ipv6             search IPv6 sockets only
+  -                     reset options
+
+  udp/tcp names: [local_port][,[rmt_host][,[rmt_port]]]
+
+root@localhost:/home/dblock# fuser --user
+No process specification given
+Usage: fuser [-fIMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE]
+             [-k [-i] [-SIGNAL]] NAME...
+       fuser -l
+       fuser -V
+Show which processes use the named files, sockets, or filesystems.
+
+  -a,--all              display unused files too
+  -i,--interactive      ask before killing (ignored without -k)
+  -I,--inode            use always inodes to compare files
+  -k,--kill             kill processes accessing the named file
+  -l,--list-signals     list available signal names
+  -m,--mount            show all processes using the named filesystems or
+                        block device
+  -M,--ismountpoint     fulfill request only if NAME is a mount point
+  -n,--namespace SPACE  search in this name space (file, udp, or tcp)
+  -s,--silent           silent operation
+  -SIGNAL               send this signal instead of SIGKILL
+  -u,--user             display user IDs
+  -v,--verbose          verbose output
+  -w,--writeonly        kill only processes with write access
+  -V,--version          display version information
+  -4,--ipv4             search IPv4 sockets only
+  -6,--ipv6             search IPv6 sockets only
+  -                     reset options
+
+  udp/tcp names: [local_port][,[rmt_host][,[rmt_port]]]
+
+root@localhost:/home/dblock# fuser --user NAME
+Specified filename NAME does not exist.
+root@localhost:/home/dblock# fuser NAME --user
+Specified filename NAME does not exist.
+root@localhost:/home/dblock# find -list
+find: unknown predicate `-list'
+root@localhost:/home/dblock# file
+Usage: file [-bcCdEhikLlNnprsvzZ0] [--apple] [--extension] [--mime-encoding]
+            [--mime-type] [-e <testname>] [-F <separator>]  [-f <namefile>]
+            [-m <magicfiles>] [-P <parameter=value>] <file> ...
+       file -C [-m <magicfiles>]
+       file [--help]
+root@localhost:/home/dblock# file --apple
+Usage: file [-bcCdEhikLlNnprsvzZ0] [--apple] [--extension] [--mime-encoding]
+            [--mime-type] [-e <testname>] [-F <separator>]  [-f <namefile>]
+            [-m <magicfiles>] [-P <parameter=value>] <file> ...
+       file -C [-m <magicfiles>]
+       file [--help]
+root@localhost:/home/dblock# file --help
+root@localhost:/home/dblock# file elf
+root@localhost:/home/dblock# sudo exit
+root@localhost:/home/dblock# logout
+bash: logout: not login shell: use `exit'
+root@localhost:/home/dblock# exit
+exit
+dblock@localhost:~$ find /usr/share/perl15
+find: '/usr/share/perl15': No such file or directory
+dblock@localhost:~$ file file.c file /dev/{wd0a,hda}
+file.c:    cannot open `file.c' (No such file or directory)
+file:      cannot open `file' (No such file or directory)
+/dev/wd0a: cannot open `/dev/wd0a' (No such file or directory)
+/dev/hda:  cannot open `/dev/hda' (No such file or directory)
+dblock@localhost:~$ file.c:   C program text
+bash: file.c:: command not found
+dblock@localhost:~$ file:     ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV),
+bash: syntax error near unexpected token `('
+dblock@localhost:~$
+dblock@localhost:~$     dynamically linked (uses shared libs), stripped
+bash: syntax error near unexpected token `('
+dblock@localhost:~$     dynamically linked (uses shared libs), stripped
+bash: syntax error near unexpected token `('
+dblock@localhost:~$ sudo file file.c file /dev/{wd0a,hda}
+file.c:    cannot open `file.c' (No such file or directory)
+file:      cannot open `file' (No such file or directory)
+/dev/wd0a: cannot open `/dev/wd0a' (No such file or directory)
+/dev/hda:  cannot open `/dev/hda' (No such file or directory)
+dblock@localhost:~$ file.c:   C program text
+bash: file.c:: command not found
+dblock@localhost:~$ file:     ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV),
+bash: syntax error near unexpected token `('
+dblock@localhost:~$
+dblock@localhost:~$     dynamically linked (uses shared libs), stripped
+bash: syntax error near unexpected token `('
+dblock@localhost:~$ file file.c file /dev/{wd0a,hda}
+file.c:    cannot open `file.c' (No such file or directory)
+file:      cannot open `file' (No such file or directory)
+/dev/wd0a: cannot open `/dev/wd0a' (No such file or directory)
+/dev/hda:  cannot open `/dev/hda' (No such file or directory)
+dblock@localhost:~$ file.c:   C program text
+bash: file.c:: command not found
+dblock@localhost:~$ file:     ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV),
+bash: syntax error near unexpected token `('
+dblock@localhost:~$
+dblock@localhost:~$     dynamically linked (uses shared libs), stripped
+bash: syntax error near unexpected token `('
+dblock@localhost:~$
+dblock@localhost:~$ /dev/wd0a: block special (0/0)
+bash: syntax error near unexpected token `('
+dblock@localhost:~$ /dev/hda: block special (3/0)
+bash: syntax error near unexpected token `('
+dblock@localhost:~$
+dblock@localhost:~$ $ file -s /dev/wd0{b,d}
+bash: $: command not found
+dblock@localhost:~$ /dev/wd0b: data
+bash: /dev/wd0b:: No such file or directory
+dblock@localhost:~$ /dev/wd0d: x86 boot sector
+bash: /dev/wd0d:: No such file or directory
+dblock@localhost:~$
+dblock@localhost:~$ $ file -s /dev/hda{,1,2,3,4,5,6,7,8,9,10}
+bash: $: command not found
+dblock@localhost:~$ /dev/hda: x86 boot sector
+bash: /dev/hda:: No such file or directory
+dblock@localhost:~$ /dev/hda1: Linux/i386 ext2 filesystem
+bash: /dev/hda1:: No such file or directory
+dblock@localhost:~$ /dev/hda2: x86 boot sector
+bash: /dev/hda2:: No such file or directory
+dblock@localhost:~$ /dev/hda3: x86 boot sector, extended partition table
+bash: /dev/hda3:: No such file or directory
+dblock@localhost:~$ /dev/hda4: Linux/i386 ext2 filesystem
+bash: /dev/hda4:: No such file or directory
+dblock@localhost:~$ /dev/hda5: Linux/i386 swap file
+bash: /dev/hda5:: No such file or directory
+dblock@localhost:~$ /dev/hda6: Linux/i386 swap file
+bash: /dev/hda6:: No such file or directory
+dblock@localhost:~$ /dev/hda7: Linux/i386 swap file
+bash: /dev/hda7:: No such file or directory
+dblock@localhost:~$ /dev/hda8: Linux/i386 swap file
+bash: /dev/hda8:: No such file or directory
+dblock@localhost:~$ /dev/hda9: empty
+bash: /dev/hda9:: No such file or directory
+dblock@localhost:~$ /dev/hda10: empty
+bash: /dev/hda10:: No such file or directory
+dblock@localhost:~$
+dblock@localhost:~$ $ file -i file.c file /dev/{wd0a,hda}
+bash: $: command not found
+dblock@localhost:~$ file.c: text/x-c
+bash: file.c:: command not found
+dblock@localhost:~$ file: application/x-executable
+bash: file:: command not found
+dblock@localhost:~$ /dev/hda: application/x-not-regular-file
+bash: /dev/hda:: No such file or directory
+dblock@localhost:~$ /dev/wd0a: application/x-not-regular-file
+bash: /dev/wd0a:: No such file or directory
+dblock@localhost:~$ file -a
+file: invalid option -- 'a'
+Usage: file [-bcCdEhikLlNnprsvzZ0] [--apple] [--extension] [--mime-encoding]
+            [--mime-type] [-e <testname>] [-F <separator>]  [-f <namefile>]
+            [-m <magicfiles>] [-P <parameter=value>] <file> ...
+       file -C [-m <magicfiles>]
+       file [--help]
+dblock@localhost:~$ file --extension $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games: cannot open `/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games' (No such file or directory)
+dblock@localhost:~$ file --extension $PATHfile
+Usage: file [-bcCdEhikLlNnprsvzZ0] [--apple] [--extension] [--mime-encoding]
+            [--mime-type] [-e <testname>] [-F <separator>]  [-f <namefile>]
+            [-m <magicfiles>] [-P <parameter=value>] <file> ...
+       file -C [-m <magicfiles>]
+       file [--help]
+dblock@localhost:~$ file -F perl15
+Usage: file [-bcCdEhikLlNnprsvzZ0] [--apple] [--extension] [--mime-encoding]
+            [--mime-type] [-e <testname>] [-F <separator>]  [-f <namefile>]
+            [-m <magicfiles>] [-P <parameter=value>] <file> ...
+       file -C [-m <magicfiles>]
+       file [--help]
+dblock@localhost:~$ who /usr/local/sbin --exec NAME
+who: unrecognized option '--exec'
+Try 'who --help' for more information.
+dblock@localhost:~$ who /usr/local/sbin -exec NAME
+who: invalid option -- 'e'
+Try 'who --help' for more information.
+dblock@localhost:~$ who /usr/local/sbin NAME
+dblock   pts/0        Nov 21 17:06 (127.0.0.1)
+dblock@localhost:~$ ports --help
+bash: ports: command not found
+dblock@localhost:~$ pts --help
+bash: pts: command not found
+dblock@localhost:~$ who /usr/games NAME
+dblock   pts/0        Nov 21 17:06 (127.0.0.1)
+dblock@localhost:~$ ls -proc
+total 20
+-rw-------. 1 dblock 3206 Nov 20 20:36 'ystemd --user'
+-rw-------. 1 dblock    0 Nov 16 21:54  xml
+-rw-------. 1 dblock    0 Nov  9 09:50  umask
+-rw-------. 1 dblock 3216 Nov 21 00:08  typescript
+-rw-------. 1 dblock    0 Nov  9 09:31  source
+-rw-------. 1 dblock    0 Nov  9 09:47  popd
+drwx------. 2 dblock 4096 Nov 20 14:46  monitor/
+-rw-------. 1 dblock 3048 Nov 21 18:04  log
+-rw-------. 1 dblock  654 Nov 21 15:14  list
+dblock@localhost:~$ uname typescript
+uname: extra operand 'typescript'
+Try 'uname --help' for more information.
+dblock@localhost:~$ uname 'typescript'
+uname: extra operand 'typescript'
+Try 'uname --help' for more information.
+dblock@localhost:~$ apt-get install typescript
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+E: Unable to locate package typescript
+dblock@localhost:~$ ls -la /proc/$$/fd
+total 0
+dr-x------. 2 dblock dblock  0 Nov 21 18:22 .
+dr-xr-xr-x. 9 dblock dblock  0 Nov 21 18:22 ..
+lrwx------. 1 dblock dblock 64 Nov 21 18:22 0 -> /dev/pts/0
+lrwx------. 1 dblock dblock 64 Nov 21 18:22 1 -> /dev/pts/0
+lrwx------. 1 dblock dblock 64 Nov 21 18:22 2 -> /dev/pts/0
+lrwx------. 1 dblock dblock 64 Nov 21 18:22 255 -> /dev/pts/0
+dblock@localhost:~$ sudo apt-get update && sudo apt-get upgrade
+Get:1 http://kali.download/kali kali-rolling InRelease [30.5 kB]
+Get:2 http://kali.download/kali kali-rolling/main arm64 Packages [16.4 MB]
+Get:3 http://kali.download/kali kali-rolling/contrib arm64 Packages [80.8 kB]
+Fetched 16.5 MB in 10s (1729 kB/s)
+Reading package lists... Done
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+Calculating upgrade... Done
+The following packages will be upgraded:
+  bash libc-bin libc6 libnss-systemd libpam-systemd libseccomp2 libsmbclient
+  libsystemd0 libudev1 libwbclient0 libxml2 python3-cairo python3-dbus
+  python3-six samba-libs systemd systemd-sysv udev
+18 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+6 not fully installed or removed.
+Need to get 14.6 MB/16.8 MB of archives.
+After this operation, 311 kB disk space will be freed.
+Do you want to continue? [Y/n] y
+Get:1 http://kali.download/kali kali-rolling/main arm64 libc6 arm64 2.29-3 [2464 kB]
+Get:2 http://kali.download/kali kali-rolling/main arm64 libnss-systemd arm64 243-8 [208 kB]
+Get:3 http://kali.download/kali kali-rolling/main arm64 systemd-sysv arm64 243-8 [102 kB]
+Get:4 http://kali.download/kali kali-rolling/main arm64 libseccomp2 arm64 2.4.2-2 [45.7 kB]
+Get:5 http://kali.download/kali kali-rolling/main arm64 libpam-systemd arm64 243-8 [212 kB]
+Get:6 http://kali.download/kali kali-rolling/main arm64 systemd arm64 243-8 [3488 kB]
+Get:7 http://kali.download/kali kali-rolling/main arm64 libsystemd0 arm64 243-8 [325 kB]
+Get:8 http://kali.download/kali kali-rolling/main arm64 libsmbclient arm64 2:4.11.1+dfsg-3 [160 kB]
+Get:9 http://kali.download/kali kali-rolling/main arm64 samba-libs arm64 2:4.11.1+dfsg-3 [5025 kB]
+Get:10 http://kali.download/kali kali-rolling/main arm64 libwbclient0 arm64 2:4.11.1+dfsg-3 [313 kB]
+Get:11 http://kali.download/kali kali-rolling/main arm64 bash arm64 5.0-5 [1345 kB]Get:12 http://kali.download/kali kali-rolling/main arm64 libc-bin arm64 2.29-3 [708 kB]
+Get:13 http://kali.download/kali kali-rolling/main arm64 python3-cairo arm64 1.16.2-2 [77.4 kB]
+Get:14 http://kali.download/kali kali-rolling/main arm64 python3-dbus arm64 1.2.12-2 [122 kB]
+Get:15 http://kali.download/kali kali-rolling/main arm64 python3-six all 1.13.0-1 [16.2 kB]
+Fetched 14.6 MB in 4s (3846 kB/s)
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 76, <> line 18.)
+debconf: falling back to frontend: Readline
+Preconfiguring packages ...
+E: Setting in Start via TCSAFLUSH for stdin failed! - tcsetattr (13: Permission denied)
+(Reading database ... 146958 files and directories currently installed.)
+Preparing to unpack .../libc6_2.29-3_arm64.deb ...
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 76.)
+debconf: falling back to frontend: Readline
+Unpacking libc6:arm64 (2.29-3) over (2.29-2) ...
+Setting up libc6:arm64 (2.29-3) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 76.)
+debconf: falling back to frontend: Readline
+(Reading database ... 146958 files and directories currently installed.)
+Preparing to unpack .../libnss-systemd_243-8_arm64.deb ...
+Unpacking libnss-systemd:arm64 (243-8) over (243-7) ...
+Preparing to unpack .../systemd-sysv_243-8_arm64.deb ...
+Unpacking systemd-sysv (243-8) over (243-7) ...
+Preparing to unpack .../archives/udev_243-8_arm64.deb ...
+Unpacking udev (243-8) over (243-7) ...
+Preparing to unpack .../libudev1_243-8_arm64.deb ...
+Unpacking libudev1:arm64 (243-8) over (243-7) ...
+Setting up libudev1:arm64 (243-8) ...
+(Reading database ... 146958 files and directories currently installed.)
+Preparing to unpack .../libseccomp2_2.4.2-2_arm64.deb ...
+Unpacking libseccomp2:arm64 (2.4.2-2) over (2.4.1-2) ...
+Setting up libseccomp2:arm64 (2.4.2-2) ...
+(Reading database ... 146958 files and directories currently installed.)
+Preparing to unpack .../libpam-systemd_243-8_arm64.deb ...
+Unpacking libpam-systemd:arm64 (243-8) over (243-7) ...
+Preparing to unpack .../systemd_243-8_arm64.deb ...
+Unpacking systemd (243-8) over (243-7) ...
+Preparing to unpack .../libsystemd0_243-8_arm64.deb ...
+Unpacking libsystemd0:arm64 (243-8) over (243-7) ...
+Setting up libsystemd0:arm64 (243-8) ...
+(Reading database ... 146958 files and directories currently installed.)
+Preparing to unpack .../libsmbclient_2%3a4.11.1+dfsg-3_arm64.deb ...
+Unpacking libsmbclient:arm64 (2:4.11.1+dfsg-3) over (2:4.11.1+dfsg-2) ...
+Preparing to unpack .../samba-libs_2%3a4.11.1+dfsg-3_arm64.deb ...
+Unpacking samba-libs:arm64 (2:4.11.1+dfsg-3) over (2:4.11.1+dfsg-2) ...
+Preparing to unpack .../libwbclient0_2%3a4.11.1+dfsg-3_arm64.deb ...
+Unpacking libwbclient0:arm64 (2:4.11.1+dfsg-3) over (2:4.11.1+dfsg-2) ...
+Preparing to unpack .../libxml2_2.9.4+dfsg1-8_arm64.deb ...
+Unpacking libxml2:arm64 (2.9.4+dfsg1-8) over (2.9.4+dfsg1-7+b4) ...
+Preparing to unpack .../archives/bash_5.0-5_arm64.deb ...
+Unpacking bash (5.0-5) over (5.0-4) ...
+Setting up bash (5.0-5) ...
+update-alternatives: using /usr/share/man/man7/bash-builtins.7.gz to provide /usr/share/man/man7/builtins.7.gz (builtins.7.gz) in auto mode
+(Reading database ... 146957 files and directories currently installed.)
+Preparing to unpack .../libc-bin_2.29-3_arm64.deb ...
+Unpacking libc-bin (2.29-3) over (2.29-2) ...
+Setting up libc-bin (2.29-3) ...
+(Reading database ... 146957 files and directories currently installed.)
+Preparing to unpack .../python3-cairo_1.16.2-2_arm64.deb ...
+Unpacking python3-cairo:arm64 (1.16.2-2) over (1.16.2-1+b1) ...
+Preparing to unpack .../python3-dbus_1.2.12-2_arm64.deb ...
+Unpacking python3-dbus (1.2.12-2) over (1.2.12-1+b1) ...
+Preparing to unpack .../python3-six_1.13.0-1_all.deb ...
+Unpacking python3-six (1.13.0-1) over (1.12.0-2) ...
+Setting up python3-dbus (1.2.12-2) ...
+Setting up python3-cairo:arm64 (1.16.2-2) ...
+Setting up systemd (243-8) ...
+Setting up libwbclient0:arm64 (2:4.11.1+dfsg-3) ...
+Setting up python3-six (1.13.0-1) ...
+Setting up udev (243-8) ...
+A chroot environment has been detected, udev not started.
+update-initramfs: deferring update (trigger activated)
+Setting up libxml2:arm64 (2.9.4+dfsg1-8) ...
+Setting up systemd-sysv (243-8) ...
+Setting up samba-libs:arm64 (2:4.11.1+dfsg-3) ...
+Setting up libnss-systemd:arm64 (243-8) ...
+Setting up libsmbclient:arm64 (2:4.11.1+dfsg-3) ...
+Setting up libpam-systemd:arm64 (243-8) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 76.)
+debconf: falling back to frontend: Readline
+Setting up udisks2 (2.8.4-1) ...
+Failed to scan devices: Permission denied
+dpkg: error processing package udisks2 (--configure):
+ installed udisks2 package post-installation script subprocess returned error exit status 1
+dpkg: dependency problems prevent configuration of gvfs-daemons:
+ gvfs-daemons depends on udisks2; however:
+  Package udisks2 is not configured yet.
+
+dpkg: error processing package gvfs-daemons (--configure):
+ dependency problems - leaving unconfigured
+dpkg: dependency problems prevent configuration of gvfs-backends:
+ gvfs-backends depends on gvfs-daemons (= 1.42.1-3); however:
+  Package gvfs-daemons is not configured yet.
+
+dpkg: error processing package gvfs-backends (--configure):
+ dependency problems - leaving unconfigured
+dpkg: dependency problems prevent configuration of gnome-disk-utility:
+ gnome-disk-utility depends on udisks2 (>= 2.7.6); however:
+  Package udisks2 is not configured yet.
+
+dpkg: error processing package gnome-disk-utility (--configure):
+ dependency problems - leaving unconfigured
+dpkg: dependency problems prevent configuration of gvfs:arm64:
+ gvfs:arm64 depends on gvfs-daemons (<< 1.42.1-3.1~); however:
+  Package gvfs-daemons is not configured yet.
+ gvfs:arm64 depends on gvfs-daemons (>= 1.42.1-3); however:
+  Package gvfs-daemons is not configured yet.
+
+dpkg: error processing package gvfs:arm64 (--configure):
+ dependency problems - leaving unconfigured
+dpkg: dependency problems prevent configuration of gvfs-fuse:
+ gvfs-fuse depends on gvfs (= 1.42.1-3); however:
+  Package gvfs:arm64 is not configured yet.
+
+dpkg: error processing package gvfs-fuse (--configure):
+ dependency problems - leaving unconfigured
+Processing triggers for dbus (1.12.16-2) ...
+Processing triggers for menu (2.1.47+b1) ...
+Processing triggers for man-db (2.9.0-1) ...
+Processing triggers for libc-bin (2.29-3) ...
+Processing triggers for initramfs-tools (0.135) ...
+Errors were encountered while processing:
+ udisks2
+ gvfs-daemons
+ gvfs-backends
+ gnome-disk-utility
+ gvfs:arm64
+ gvfs-fuse
+E: Sub-process /usr/bin/dpkg returned an error code (1)
+dblock@localhost:~$ apt-get configure gvfs
+E: Invalid operation configure
+dblock@localhost:~$ dpkg --configure gvfs
+dpkg: error: requested operation requires superuser privilege
+dblock@localhost:~$ sudo dpkg --configure gvfs
+dpkg: dependency problems prevent configuration of gvfs:arm64:
+ gvfs:arm64 depends on gvfs-daemons (<< 1.42.1-3.1~); however:
+  Package gvfs-daemons is not configured yet.
+ gvfs:arm64 depends on gvfs-daemons (>= 1.42.1-3); however:
+  Package gvfs-daemons is not configured yet.
+
+dpkg: error processing package gvfs:arm64 (--configure):
+ dependency problems - leaving unconfigured
+Errors were encountered while processing:
+ gvfs:arm64
+dblock@localhost:~$ dependencies --help
+bash: dependencies: command not found
+dblock@localhost:~$ userland_profile.sh
+bash: userland_profile.sh: command not found
+dblock@localhost:~$ "-Xmx2048m -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -XX:MaxRAMFraction=1"
+bash: -Xmx2048m -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -XX:MaxRAMFraction=1: command not found
+dblock@localhost:~$       GRADLE_OPTS: '-Dorg.gradle.jvmargs="-Xmx2048m"'
+bash: GRADLE_OPTS:: command not found
+dblock@localhost:~$
+dblock@localhost:~$   # Dependencies
+dblock@localhost:~$   ruby_dependencies: &ruby_dependencies
+[1] 22211
+bash: ruby_dependencies:: command not found
+bash: ruby_dependencies: command not found
+[1]+  Exit 127                ruby_dependencies:
+dblock@localhost:~$     run:
+bash: run:: command not found
+dblock@localhost:~$       name: Download Ruby dependencies
+bash: name:: command not found
+dblock@localhost:~$       command: bundle check || bundle install --path vendor/bundle
+bash: command:: command not found
+bash: bundle: command not found
+dblock@localhost:~$ xcpretty-travis-formatter (1.0.0)
+bash: syntax error near unexpected token `1.0.0'
+dblock@localhost:~$       xcpretty (~> 0.2, >= 0.0.7)
+bash: syntax error near unexpected token `~'
+dblock@localhost:~$
+dblock@localhost:~$ PLATFORMS
+bash: PLATFORMS: command not found
+dblock@localhost:~$   ruby
+bash: ruby: command not found
+dblock@localhost:~$
+dblock@localhost:~$ DEPENDENCIES
+bash: DEPENDENCIES: command not found
+dblock@localhost:~$   activesupport
+bash: activesupport: command not found
+dblock@localhost:~$   fastlane
+bash: fastlane: command not found
+dblock@localhost:~$
+dblock@localhost:~$ BUNDLED WITH
+bash: BUNDLED: command not found
+dblock@localhost:~$    2.0.1
+bash: 2.0.1: command not found
+dblock@localhost:~$ preBuild.dependsOn checkIfAssetsMissing
+bash: preBuild.dependsOn: command not found
+dblock@localhost:~$
+dblock@localhost:~$ dependencies {
+bash: dependencies: command not found
+dblock@localhost:~$     def moshi_version = '1.8.0'
+bash: def: command not found
+dblock@localhost:~$     def okhttp_version = '3.13.1'
+bash: def: command not found
+dblock@localhost:~$     def sentry_version = '1.7.22'
+bash: def: command not found
+dblock@localhost:~$ apt-get install nodejs
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following additional packages will be installed:
+  libnode64 libuv1 nodejs-doc
+Suggested packages:
+  npm
+The following NEW packages will be installed:
+  libnode64 libuv1 nodejs nodejs-doc
+0 upgraded, 4 newly installed, 0 to remove and 0 not upgraded.
+6 not fully installed or removed.
+Need to get 6582 kB/6702 kB of archives.
+After this operation, 31.2 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://kali.download/kali kali-rolling/main arm64 libnode64 arm64 10.17.0~dfsg-2 [5525 kB]
+Get:2 http://kali.download/kali kali-rolling/main arm64 nodejs arm64 10.17.0~dfsg-2 [88.0 kB]
+Get:3 http://kali.download/kali kali-rolling/main arm64 nodejs-doc all 10.17.0~dfsg-2 [969 kB]
+Fetched 6582 kB in 2s (2852 kB/s)
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 76, <> line 4.)debconf: falling back to frontend: Readline
+E: Setting in Start via TCSAFLUSH for stdin failed! - tcsetattr (13: Permission denied)
+dpkg: error: requested operation requires superuser privilege
+E: Sub-process /usr/bin/dpkg returned an error code (2)
+dblock@localhost:~$

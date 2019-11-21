@@ -1,0 +1,257 @@
+dblock@localhost:~$ ls -proc
+total 16
+-rw-------. 1 dblock 3206 Nov 20 20:36 'ystemd --user'
+-rw-------. 1 dblock    0 Nov 16 21:54  xml
+-rw-------. 1 dblock    0 Nov  9 09:50  umask
+-rw-------. 1 dblock 3216 Nov 21 00:08  typescript
+-rw-------. 1 dblock    0 Nov  9 09:31  source
+-rw-------. 1 dblock    0 Nov  9 09:47  popd
+drwx------. 2 dblock 4096 Nov 20 14:46  monitor/
+-rw-------. 1 dblock  654 Nov 21 15:14  list
+dblock@localhost:~$ frep -rn "." -e Calculate | grep -v Binary
+-bash: frep: command not found
+dblock@localhost:~$ grep -rn "." -e Calculate | grep -v Binary
+dblock@localhost:~$ cd /usr/bin/root
+-bash: cd: /usr/bin/root: No such file or directory
+dblock@localhost:~$ release --help
+-bash: release: command not found
+dblock@localhost:~$ pushd --help
+pushd: pushd [-n] [+N | -N | dir]
+    Add directories to stack.
+
+    Adds a directory to the top of the directory stack, or rotates
+    the stack, making the new top of the stack the current working
+    directory.  With no arguments, exchanges the top two directories.
+
+    Options:
+      -n        Suppresses the normal change of directory when adding
+                directories to the stack, so only the stack is manipulated.
+
+    Arguments:
+      +N        Rotates the stack so that the Nth directory (counting
+                from the left of the list shown by `dirs', starting with
+                zero) is at the top.
+
+      -N        Rotates the stack so that the Nth directory (counting
+                from the right of the list shown by `dirs', starting with
+                zero) is at the top.
+
+      dir       Adds DIR to the directory stack at the top, making it the
+                new current working directory.
+
+    The `dirs' builtin displays the directory stack.
+
+    Exit Status:
+    Returns success unless an invalid argument is supplied or the directory
+    change fails.
+dblock@localhost:~$ dirs
+~
+dblock@localhost:~$ dirs -a
+-bash: dirs: -a: invalid number
+dirs: usage: dirs [-clpv] [+N] [-N]
+dblock@localhost:~$ dirs --help
+dirs: dirs [-clpv] [+N] [-N]
+    Display directory stack.
+
+    Display the list of currently remembered directories.  Directories
+    find their way onto the list with the `pushd' command; you can get
+    back up through the list with the `popd' command.
+
+    Options:
+      -c        clear the directory stack by deleting all of the elements
+      -l        do not print tilde-prefixed versions of directories relative
+                to your home directory
+      -p        print the directory stack with one entry per line
+      -v        print the directory stack with one entry per line prefixed
+                with its position in the stack
+
+    Arguments:
+      +N        Displays the Nth entry counting from the left of the list
+                shown by dirs when invoked without options, starting with
+                zero.
+
+      -N        Displays the Nth entry counting from the right of the list
+                shown by dirs when invoked without options, starting with
+                zero.
+
+    Exit Status:
+    Returns success unless an invalid option is supplied or an error occurs.
+dblock@localhost:~$ dirs -p
+~
+dblock@localhost:~$ tempfs --help
+-bash: tempfs: command not found
+dblock@localhost:~$ $PATH 'tempfs'
+-bash: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games: No such file or directory
+dblock@localhost:~$ who /sbin
+dblock@localhost:~$ dirs -c
+dblock@localhost:~$ dirs -v +N
+-bash: dirs: +N: invalid number
+dirs: usage: dirs [-clpv] [+N] [-N]
+dblock@localhost:~$ dirs -v 1-10
+-bash: dirs: 1-10: invalid option
+dirs: usage: dirs [-clpv] [+N] [-N]
+dblock@localhost:~$ dirs -v -N (7)
+-bash: syntax error near unexpected token `('
+dblock@localhost:~$ dirs -v -N 7
+-bash: dirs: -N: invalid number
+dirs: usage: dirs [-clpv] [+N] [-N]
+dblock@localhost:~$ bash -c ; bash -c ; bash -c
+bash: -c: option requires an argument
+bash: -c: option requires an argument
+bash: -c: option requires an argument
+dblock@localhost:~$ cp .bashrc bashrc -bak
+cp: invalid option -- 'k'
+Try 'cp --help' for more information.
+dblock@localhost:~$ cp .bashrc bashrc -backup
+cp: invalid option -- 'c'
+Try 'cp --help' for more information.
+dblock@localhost:~$ cp --help
+Usage: cp [OPTION]... [-T] SOURCE DEST
+  or:  cp [OPTION]... SOURCE... DIRECTORY
+  or:  cp [OPTION]... -t DIRECTORY SOURCE...
+Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -a, --archive                same as -dR --preserve=all
+      --attributes-only        don't copy the file data, just the attributes
+      --backup[=CONTROL]       make a backup of each existing destination file
+  -b                           like --backup but does not accept an argument
+      --copy-contents          copy contents of special files when recursive
+  -d                           same as --no-dereference --preserve=links
+  -f, --force                  if an existing destination file cannot be
+                                 opened, remove it and try again (this option
+                                 is ignored when the -n option is also used)
+  -i, --interactive            prompt before overwrite (overrides a previous -n
+                                  option)
+  -H                           follow command-line symbolic links in SOURCE
+  -l, --link                   hard link files instead of copying
+  -L, --dereference            always follow symbolic links in SOURCE
+  -n, --no-clobber             do not overwrite an existing file (overrides
+                                 a previous -i option)
+  -P, --no-dereference         never follow symbolic links in SOURCE
+  -p                           same as --preserve=mode,ownership,timestamps
+      --preserve[=ATTR_LIST]   preserve the specified attributes (default:
+                                 mode,ownership,timestamps), if possible
+                                 additional attributes: context, links, xattr,
+                                 all
+      --no-preserve=ATTR_LIST  don't preserve the specified attributes
+      --parents                use full source file name under DIRECTORY
+  -R, -r, --recursive          copy directories recursively
+      --reflink[=WHEN]         control clone/CoW copies. See below
+      --remove-destination     remove each existing destination file before
+                                 attempting to open it (contrast with --force)
+      --sparse=WHEN            control creation of sparse files. See below
+      --strip-trailing-slashes  remove any trailing slashes from each SOURCE
+                                 argument
+  -s, --symbolic-link          make symbolic links instead of copying
+  -S, --suffix=SUFFIX          override the usual backup suffix
+  -t, --target-directory=DIRECTORY  copy all SOURCE arguments into DIRECTORY
+  -T, --no-target-directory    treat DEST as a normal file
+  -u, --update                 copy only when the SOURCE file is newer
+                                 than the destination file or when the
+                                 destination file is missing
+  -v, --verbose                explain what is being done
+  -x, --one-file-system        stay on this file system
+  -Z                           set SELinux security context of destination
+                                 file to default type
+      --context[=CTX]          like -Z, or if CTX is specified then set the
+                                 SELinux or SMACK security context to CTX
+      --help     display this help and exit
+      --version  output version information and exit
+
+By default, sparse SOURCE files are detected by a crude heuristic and the
+corresponding DEST file is made sparse as well.  That is the behavior
+selected by --sparse=auto.  Specify --sparse=always to create a sparse DEST
+file whenever the SOURCE file contains a long enough sequence of zero bytes.
+Use --sparse=never to inhibit creation of sparse files.
+
+When --reflink[=always] is specified, perform a lightweight copy, where the
+data blocks are copied only when modified.  If this is not possible the copy
+fails, or if --reflink=auto is specified, fall back to a standard copy.
+Use --reflink=never to ensure a standard copy is performed.
+
+The backup suffix is '~', unless set with --suffix or SIMPLE_BACKUP_SUFFIX.
+The version control method may be selected via the --backup option or through
+the VERSION_CONTROL environment variable.  Here are the values:
+
+  none, off       never make backups (even if --backup is given)
+  numbered, t     make numbered backups
+  existing, nil   numbered if numbered backups exist, simple otherwise
+  simple, never   always make simple backups
+
+As a special case, cp makes a backup of SOURCE when the force and backup
+options are given and SOURCE and DEST are the same name for an existing,
+regular file.
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Report cp translation bugs to <https://translationproject.org/team/>
+Full documentation at: <https://www.gnu.org/software/coreutils/cp>
+or available locally via: info '(coreutils) cp invocation'
+dblock@localhost:~$ popd -l --all
+-bash: popd: -l: invalid number
+popd: usage: popd [-n] [+N | -N]
+dblock@localhost:~$ popd --all
+-bash: popd: --all: invalid number
+popd: usage: popd [-n] [+N | -N]
+dblock@localhost:~$ popd list
+-bash: popd: list: invalid argument
+popd: usage: popd [-n] [+N | -N]
+dblock@localhost:~$ popd -all
+-bash: popd: -all: invalid number
+popd: usage: popd [-n] [+N | -N]
+dblock@localhost:~$ popd
+-bash: popd: directory stack empty
+dblock@localhost:~$ cml
+-bash: cml: command not found
+dblock@localhost:~$ xml
+-bash: xml: command not found
+dblock@localhost:~$ monitor/
+-bash: monitor/: Is a directory
+dblock@localhost:~$ bind
+dblock@localhost:~$ bind --help
+bind: bind [-lpsvPSVX] [-m keymap] [-f filename] [-q name] [-u name] [-r keyseq] [-x keyseq:shell-command] [keyseq:readline-function or readline-command]
+    Set Readline key bindings and variables.
+
+    Bind a key sequence to a Readline function or a macro, or set a
+    Readline variable.  The non-option argument syntax is equivalent to
+    that found in ~/.inputrc, but must be passed as a single argument:
+    e.g., bind '"\C-x\C-r": re-read-init-file'.
+
+    Options:
+      -m  keymap         Use KEYMAP as the keymap for the duration of this
+                         command.  Acceptable keymap names are emacs,
+                         emacs-standard, emacs-meta, emacs-ctlx, vi, vi-move,
+                         vi-command, and vi-insert.
+      -l                 List names of functions.
+      -P                 List function names and bindings.
+      -p                 List functions and bindings in a form that can be
+                         reused as input.
+      -S                 List key sequences that invoke macros and their values
+      -s                 List key sequences that invoke macros and their values
+                         in a form that can be reused as input.
+      -V                 List variable names and values
+      -v                 List variable names and values in a form that can
+                         be reused as input.
+      -q  function-name  Query about which keys invoke the named function.
+      -u  function-name  Unbind all keys which are bound to the named function.
+      -r  keyseq         Remove the binding for KEYSEQ.
+      -f  filename       Read key bindings from FILENAME.
+      -x  keyseq:shell-command  Cause SHELL-COMMAND to be executed when
+                                KEYSEQ is entered.
+      -X                 List key sequences bound with -x and associated commands
+                         in a form that can be reused as input.
+
+    Exit Status:
+    bind returns 0 unless an unrecognized option is given or an error occurs.
+dblock@localhost:~$ bind -release [-release all keybinds]
+dblock@localhost:~$ dirs
+~
+dblock@localhost:~$ ~
+-bash: /home/dblock: Is a directory
+dblock@localhost:~$ bind -x
+-bash: bind: -x: option requires an argument
+bind: usage: bind [-lpsvPSVX] [-m keymap] [-f filename] [-q name] [-u name] [-r keyseq] [-x keyseq:shell-command] [keyseq:readline-function or readline-command]
+dblock@localhost:~$ bind -f [-read and display files with key bindings]
+-bash: bind: [-read: cannot read: No such file or directory
+dblock@localhost:~$ bind -f list
+dblock@localhost:~$
